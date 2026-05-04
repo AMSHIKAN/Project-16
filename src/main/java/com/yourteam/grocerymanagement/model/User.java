@@ -1,26 +1,36 @@
 package com.yourteam.grocerymanagement.model;
 
+/**
+ * User Model - Encapsulates user data with private fields and public accessors.
+ * Admin and Customer roles are managed via the role field.
+ */
 public class User {
-
     private String userId;
+    private String username;
     private String password;
     private String email;
     private String role; // "ADMIN" or "CUSTOMER"
+    private String phone;
+    private boolean blocked;
 
-    // Constructor
-    public User(String userId, String password, String email, String role) {
+    public User() {}
+
+    public User(String userId, String username, String password, String email, String role, String phone, boolean blocked) {
         this.userId = userId;
+        this.username = username;
         this.password = password;
         this.email = email;
         this.role = role;
+        this.phone = phone;
+        this.blocked = blocked;
     }
 
-    // Default constructor
-    public User() {}
-
-    // Getters and Setters
+    // Getters and Setters (Encapsulation)
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
+
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
@@ -31,25 +41,30 @@ public class User {
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
 
-    // authenticate method
-    public boolean authenticate(String username, String password) {
-        return this.userId.equals(username) && this.password.equals(password);
-    }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    // Convert to file format
+    public boolean isBlocked() { return blocked; }
+    public void setBlocked(boolean blocked) { this.blocked = blocked; }
+
+    /**
+     * Serialize to pipe-delimited string for file storage
+     */
     public String toFileString() {
-        return userId + "," + password + "," + email + "," + role;
+        return userId + "|" + username + "|" + password + "|" + email + "|" + role + "|" + phone + "|" + blocked;
     }
 
-    // Convert from file format
+    /**
+     * Deserialize from pipe-delimited string
+     */
     public static User fromFileString(String line) {
-        String[] parts = line.split(",");
-        return new User(parts[0], parts[1], parts[2], parts[3]);
+        String[] parts = line.split("\\|", -1);
+        if (parts.length < 7) return null;
+        return new User(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], Boolean.parseBoolean(parts[6]));
     }
 
     @Override
     public String toString() {
-        return "User{userId='" + userId + "', email='" + email + "', role='" + role + "'}";
+        return "User{userId='" + userId + "', username='" + username + "', email='" + email + "', role='" + role + "'}";
     }
 }
-
