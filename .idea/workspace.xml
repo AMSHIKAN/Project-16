@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32a192b3-e9a3-4441-94e2-8f8c0dd5f34d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yourteam/grocerymanagement/servlet/ShopServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/grocery-management/conf/catalina.policy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +68,7 @@
       <workItem from="1777645409868" duration="169000" />
       <workItem from="1777645601184" duration="328000" />
       <workItem from="1777910612458" duration="1486000" />
+      <workItem from="1777915273632" duration="639000" />
     </task>
     <servers />
   </component>
