@@ -1,0 +1,2 @@
+U-81a61a0e,customer123,customer123,customer123@gmail.com,customer
+U-d15e0603,admin132,admin123,admin123@gmail.com,admin
